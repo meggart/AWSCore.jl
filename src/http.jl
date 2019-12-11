@@ -33,6 +33,8 @@ function http_request(request::AWSRequest)
                                 aws_authorization=false,
                                 verbose=verbose)
 
+        @show request
+
         return HTTP.request(http_stack,
                             request[:verb],
                             HTTP.URI(request[:url]),
